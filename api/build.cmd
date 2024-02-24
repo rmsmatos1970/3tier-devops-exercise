@@ -1,0 +1,1 @@
+docker build . -t rmsmatos/3tier-api:latest

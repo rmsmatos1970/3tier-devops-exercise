@@ -1,0 +1,1 @@
+docker run --name frontend -p 3000:80/tcp -d rmsmatos/3tier-frontend:latest
