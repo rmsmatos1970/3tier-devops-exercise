@@ -89,13 +89,13 @@ jobs:
 
       - name: "Tag Docker Image With Specific Version"
         run: |
-          docker tag ${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}} ${{ secrets.DOCKER_HUB }}:${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}}
+          docker tag ${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}} ${{ secrets.DOCKER_HUB }}/${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}}
 
       - name: "Tag Docker Image as Latest"
         run: |
-          docker tag ${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}} ${{ secrets.DOCKER_HUB }}:${{ env.IMAGE_NAME}}:latest
+          docker tag ${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}} ${{ secrets.DOCKER_HUB }}/${{ env.IMAGE_NAME}}:latest
 
       - name: "Push to Docker Hub"
         run: |
-          docker push ${{ secrets.DOCKER_HUB }}:${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}}
-          docker push ${{ secrets.DOCKER_HUB }}:${{ env.IMAGE_NAME}}:latest
+          docker push ${{ secrets.DOCKER_HUB }}/${{ env.IMAGE_NAME}}:${{ steps.tag.outputs.tag}}
+          docker push ${{ secrets.DOCKER_HUB }}/${{ env.IMAGE_NAME}}:latest
