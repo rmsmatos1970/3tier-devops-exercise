@@ -1,6 +1,5 @@
 FROM ubuntu:20.04
 
-LABEL maintainer="hello@kesaralive.com"
 LABEL description="Apache / PHP development environment"
 
 ARG DEBIAN_FRONTEND=newt
