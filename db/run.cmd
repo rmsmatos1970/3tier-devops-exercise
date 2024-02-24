@@ -1,0 +1,1 @@
+docker run --name db -p 3306:3306/tcp -e MYSQL_USER=todo_admin -e MYSQL_PASSWORD=password -d rmsmatos/3tier-db:latest
