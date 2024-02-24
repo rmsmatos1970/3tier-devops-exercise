@@ -51,8 +51,7 @@ RUN find /var/www -type f -exec chmod 664 {} +
 
 
 RUN rm /var/www/html/index.html
-
-COPY src/ /var/www/html/
+COPY ./src/ /var/www/html/
 
 EXPOSE 80
 
