@@ -13,8 +13,8 @@ on:
       - main
     types: [created]
     tags: ["v*.*.*"]
-    paths: 
-      - 'api/**'
+    # paths: 
+    #   - 'api/**'
 env:
   IMAGE_NAME: "3tier-api"
   CONTAINER_NAME: "3tier-api-container"
