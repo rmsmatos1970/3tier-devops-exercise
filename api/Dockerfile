@@ -54,7 +54,6 @@ RUN rm /var/www/html/index.html
 
 COPY /src /var/www/html/
 
-
 EXPOSE 80
 
 # start Apache2 on image start
