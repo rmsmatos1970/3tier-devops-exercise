@@ -1,0 +1,1 @@
+kubectl apply -f backend-deployment.yaml, backend-service.yaml, database-deployment.yaml, database-service.yaml, frontend-deployment.yaml, frontend-service.yaml, phpmyadmin-deployment.yaml, phpmyadmin-service.yaml

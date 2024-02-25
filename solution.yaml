@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 3tier
+spec:
+  containers:
+  - name: frontend
+    image: rmsmatos/3tier-frontend:latest
+    ports:
+      - containerPort: 80
+        hostPort: 3000
+  - name: backend
+    image: rmsmatos/3tier-backend:latest
+    ports:
+      - containerPort: 80
+        hostPort: 5000
+  - name: database
+    image: rmsmatos/3tier-db:latest
+    env:
+      - name: MYSQL_ALLOW_EMPTY_PASSWORD
+        value: "1"
+      - name: MYSQL_DATABASE
+        value: todo_app
+      - name: MYSQL_PASSWORD
+        value: password
+      - name: MYSQL_USER
+        value: todo_admin
+    ports:
+      - containerPort: 3306
