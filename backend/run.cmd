@@ -1,1 +1,1 @@
-docker run --name api -p 5000:81/tcp -d rmsmatos/3tier-backend:latest
+docker run --name backend -p 5000:81/tcp -d rmsmatos/3tier-backend:latest

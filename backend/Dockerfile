@@ -44,6 +44,8 @@ RUN a2enmod rewrite
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 # autorise .htaccess files
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+RUN sed -i 's/80/81/g' /etc/apache2/apache2.conf
+RUN sed -i 's/Listen 80/Listen 81/g' /etc/apache2/ports.conf
 
 RUN chgrp -R www-data /var/www
 RUN find /var/www -type d -exec chmod 775 {} +
